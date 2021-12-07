@@ -1,0 +1,124 @@
+<html>
+<head>
+
+<title>BEAThoven</title>
+
+<link rel="stylesheet" href="about_style.css" type="text/css">
+
+<meta charset="UTF-8">
+<name="author" content="Catarina Pontes">
+
+</head>
+
+<body>
+
+
+<!---------nav menu----------!>
+
+<?php include("../header_footer/nav.html")?>
+
+
+<!---------team----------!>
+
+
+<div class="wrapper">
+    <h1>Meet the Team</h1>
+    <div class="our_team">
+        
+	<div class="team_member">
+          <div class="member_img">
+             <img src="http://widit.knu.ac.kr/~adit/proj/resources/images/cat.png" alt="our_team">
+             <a href="https://www.linkedin.com/in/catarina-pontes-739773201/"> <div class="social_media">
+               <div class="linkedin"><img src="http://widit.knu.ac.kr/~adit/proj/resources/images/linkedin.png" style="width:40px;height:40px;"></div>
+             </div></a>
+          </div>
+          <h3>catarina pontes</h3>
+          <span>Responsable mainly for CSS</span>
+          <p>I am from Portugal and my major is Data Science. I love how this course made me able to create responsive websites. </p>
+        </div>
+
+        <div class="team_member">
+           <div class="member_img">
+           	<img src="http://widit.knu.ac.kr/~adit/proj/resources/images/nicole.png" alt="our_team">
+           	<a href="https://www.linkedin.com/in/catarina-pontes-739773201/"> <div class="social_media">
+                 <div class="linkedin"><img src="http://widit.knu.ac.kr/~adit/proj/resources/images/linkedin.png" style="width:40px;height:40px;"></div>
+             </div></a>
+          </div>
+          <h3>name</h3>
+          <span>position</span>
+          <p>text here...</p>
+      </div>
+
+        <div class="team_member">
+           <div class="member_img">
+             <img src="http://widit.knu.ac.kr/~adit/proj/resources/images/arijit.png" alt="our_team">
+             <a href="https://www.linkedin.com/in/catarina-pontes-739773201/"> <div class="social_media">
+             <div class="linkedin"><img src="http://widit.knu.ac.kr/~adit/proj/resources/images/linkedin.png" style="width:40px;height:40px;"></div>
+           </div></a>
+          </div>
+          <h3>name</h3>
+          <span>position</span>
+          <p>text here...</p>
+      </div>
+
+        <div class="team_member">
+           <div class="member_img">
+             <img src="http://widit.knu.ac.kr/~adit/proj/resources/images/adit.png" alt="our_team">
+             <a href="https://www.linkedin.com/in/adit-george-6b57151ab/"> 
+	     <div class="social_media">
+             <div class="linkedin"><img src="http://widit.knu.ac.kr/~adit/proj/resources/images/linkedin.png" style="width:40px;height:40px;"></div>
+           </div></a>
+          </div>
+          <h3>Name</h3>
+          <span>position</span>
+          <p>text here...</p>
+      </div>  
+
+    </div>
+</div>
+
+
+<!---------go to top button----------!>
+
+
+<button onclick="topFunction()" id="myBtn" title="Gototop"><img src="http://widit.knu.ac.kr/~adit/proj/resources/images/top.png" style="width:30px;"></button>
+
+
+<script>
+
+var mybutton = document.getElementById("myBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+
+
+<!---------footer----------!>
+
+
+<?php include('../header_footer/footer.html')?>
+
+
+
+
+
+
+</body>
+
+</html>
+

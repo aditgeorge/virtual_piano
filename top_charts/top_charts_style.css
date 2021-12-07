@@ -1,0 +1,193 @@
+/*----------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+
+body{
+  background: #E3E3E3;
+}
+
+
+/*-----------------------------*/
+
+.header{
+text-align: center;
+padding-top:10%;
+padding-bottom:3%;
+Margin-bottom:40px;
+background-image: linear-gradient(#33517E, #E3E3E3);
+background-size: auto 400px;
+}
+
+.header h1{
+Color:white;
+Font-size:36px;
+}
+
+table { 
+Margin-left:25%;
+Margin-right:25%;
+width:50%;
+border-collapse: collapse;
+text-align: center;
+Margin-top:150px;
+Margin-bottom:150px;
+}
+
+
+
+
+Tr{
+Color: #3C3B3B;
+  text-transform: uppercase;
+
+}
+
+Th{
+text-transform: uppercase;
+font-weight: bold;
+Color: #3C3B3B;
+}
+
+
+.title{
+border-bottom: 3px solid #33517E;
+Padding:10px;
+}
+
+/* .col1 {
+left:2px;
+Padding:10px;
+} */
+
+
+/* .col1 img{
+Margin-right:10px;
+} */
+
+.col2 {
+border-left: 1px solid #33517E; 
+border-width: 0 0 1px 3px;
+Padding:10px;
+}
+
+.col3 {
+border-left: 1px solid #33517E; 
+border-width: 0 0 1px 3px;
+Padding:10px;
+}
+
+
+.col2_text{
+Margin-bottom:-15px;
+}
+
+
+.col3_text{
+Margin-top:15px;
+display: inline-block;
+Padding:10px;
+}
+
+
+.tune{
+Margin-top:-5px;
+}
+
+
+
+
+
+.play_icon:hover {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);}
+
+.play_icon{
+  background-color: #83152B;
+Border-radius:50%;
+Height:30px;
+Width:30px;
+Margin-bottom:-10px;
+Margin-left:0px;
+}
+
+
+
+.upvote{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    margin:10px;
+    margin-left:20px;
+    display: inline-block;
+}
+
+
+
+
+
+.downvote{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    margin:10px;
+    margin-right:20px;
+    display: inline-block;
+}
+
+
+.up{
+  background-image: url('http://widit.knu.ac.kr/~adit/proj/resources/images/thumb_up.png');
+  background-size: cover;
+  height: 30px;
+  Width:30px;
+  Margin-bottom:-8px;
+}
+
+.down{
+  background-image: url('http://widit.knu.ac.kr/~adit/proj/resources/images/thumbs_down.png');
+  background-size: cover;
+  height: 30px;
+  Width:30px;
+  Margin-bottom:-8px;
+}
+
+.up:hover{
+Opacity:0.5;
+}
+
+.down:hover{
+Opacity:0.5;
+}
+
+/*----------Button go to top-----------*/
+
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  z-index: 99;
+  font-size: 0.7em;
+  border: none;
+  outline: none;
+  background-color: #2F2E2E;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  Margin-left:-5px;;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+

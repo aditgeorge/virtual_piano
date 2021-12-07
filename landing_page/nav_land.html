@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<name="author" content="Catarina Pontes">
+
+
+<style>
+/*----------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #33517E;
+  Height:60px;
+  Display:block;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  Vertical-align:middle;
+}
+
+.pages{
+Float:left;
+Margin-top:5px;
+}
+
+.profile{
+Float:right;
+}
+
+.profile_pic{
+  Width:30px;
+  Margin-top:0;
+  Margin-bottom:0;
+}
+
+
+.profile_pic:hover{
+  -webkit-filter: drop-shadow(5px 5px 5px #A70808);
+
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  Padding:0;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropbtn:hover{
+  Color:white;
+  text-shadow: 1px 1px 3px black, 0 0 2em #A70808, 0 0 1em #A70808;
+}
+
+.navbar::before{
+  content:'';
+  display:block;
+  height:5px;
+  background-color:#7D2349;	
+  position:absolute;
+  top:0;
+  width:0%;
+  transition:all ease-in-out 500ms;
+}
+
+.navbar:hover::before{
+	width:100%
+}
+
+
+.subnav {
+  display: none;
+  position: absolute;
+  Min-width:160px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.subnav a {
+  float: none;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.subnav a:hover {
+  background-color: #BCC4D1;
+text-shadow: 1px 1px 3px black, 0 0 2em white, 0 0 1em white;
+}
+
+.dropdown:hover .subnav {
+  display: block;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="pages">
+  <a href="http://widit.knu.ac.kr/~adit/proj/landing_page/home_land.html">Home</a>
+  <a href="http://widit.knu.ac.kr/~adit/proj/landing_page/about_land.html">About</a>
+  <a href="https://github.com/CivilisedFalcon/Virtual-Musical-Instrument">Source Code</a>
+  </div>
+  <div class="profile">
+  <div class="dropdown">
+    <button class="dropbtn"><img src="http://widit.knu.ac.kr/~adit/proj/resources/images/profile_white.png" class="profile_pic"> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="subnav" style="margin-left:-5%;">
+      <a href="http://widit.knu.ac.kr/~adit/proj/user_auth/login.html">Login</a>
+      <a href="http://widit.knu.ac.kr/~adit/proj/user_auth/signup.html">Sign up</a>
+    </div>
+  </div> 
+  </div>
+</div>
+
+
+</body>
+</html>

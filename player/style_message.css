@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+
+
+Body{background-color:#BBC5D4}
+
+/*--------------------------------------*/
+
+
+.oops{
+Margin-top:3%;
+Text-align:center;
+Font-size:100px;
+Color:#a40c0c;
+Padding:20px;
+}
+
+.logo{
+	width:10%;
+	margin-left:45%;
+	margin-top:10%;
+
+	
+}
+
+
+
+.wel{
+Margin-top:3%;
+Text-align:center;
+Font-size:100px;
+Color:#a40c0c;
+Padding:20px;
+}
+
+.type1{
+Text-align:center;
+Padding:20px;
+Font-size:30px;
+}
+
+.type{
+Text-align:center;
+Padding:20px;
+Font-size:50px;
+}
+
+.obs{
+Text-align:center;
+Padding:20px;
+}
+
+P{
+Text-align:center;
+Padding:20px;
+}

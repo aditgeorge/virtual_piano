@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" href="signup_style.css" type="text/css">
+<meta charset="UTF-8">
+<name="author" content="Catarina Pontes">
+</head>
+
+
+<body>
+
+
+  <?php include("../landing_page/nav_land.php")?>
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content" action="./signup.cgi" method="post">
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="pw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pw" required>
+
+      <label for="pw2"><b>Confirm Password</b></label>
+      <input type="password" placeholder="Re-enter Password" name="pw2" required>
+        
+      <button type="submit">Sign Up</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button class="cancelbtn" onclick="goBack()">Cancel</button>
+      <span class="psw">Already have an account?<a href="login.html">Click here.</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<?php include("../header_footer/footer.html")?>
+
+</body>
+</html> 
