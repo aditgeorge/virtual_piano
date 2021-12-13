@@ -8,9 +8,9 @@ $tfile="../resources/files/top_charts.out";
 $delim="!---!";
 $songid=param("songid");
 $change=param("change");
+$uname= cookie('VP-cookie');
 chomp $songid;
 chomp $change;
-$uname= cookie('VP-cookie');
 chomp $uname;
 open(IN,"<$ufile") || die "can't open $ufile for reading\n";
 @lines=<IN>;
@@ -19,8 +19,12 @@ close(IN);
 %uinfo=();
 foreach $line(@lines) {
     chomp $line;
+	if($line eq "") {
+        next;
+    }
     @temp=split(/\Q$delim\E/,$line);
-    $uinfo{$temp[0]}=$temp[1];
+    $uinfo{$temp[0]}{"pw"}=$temp[1];
+    $uinfo{$temp[0]}{"avatar"}=$temp[2];
 }
 #----------------------------------------
 #top_charts file load
@@ -31,6 +35,9 @@ close(IN);
 %tsongs=();
 foreach $line(@lines) {
     chomp $line;
+    if($line eq "") {
+        next;
+    }
     @temp=split(/\Q$delim\E/,$line);
     $tsongs{$temp[0]}{"username"}=$temp[1];
     $tsongs{$temp[0]}{"songname"}=$temp[2];
@@ -41,13 +48,22 @@ foreach $line(@lines) {
 #if uname isn't given prompt login
 if(($uname eq "")||(!exists($uinfo{$uname}))) {
 	print header();
-print<<EOP;
-<html>
-<head><title>Session Timeout</title></head>
-	
-	<body style="padding:20px">
-	<h2>Session Timed out. Please log in again<br></h2>
-	<a href="../user_auth/login.html">Log In</a>
+    $headerphp=system '/usr/bin/php', '../landing_page/nav_land.php';
+    print<<EOP;
+   <html>
+   <head>
+    <meta charset="utf-8">
+    <title>Virtual Piano</title>
+    <link rel="stylesheet" href="style_message.css">
+    <title>>Cookie Timed out</title>
+    </head>
+    <body>
+    <h1 class="oops">>Cookie Timed Out</h1>
+    <h2 class="type">Unfortunately the cookie couldn't be read to verify user credentials.<br></h2>
+    <h3 class="obs"><a href="../user_auth/login.html">Please click here to log in again</a></h3>
+    <br><br>
+    </body>
+    </html>
 EOP
 exit;
 }
@@ -82,8 +98,6 @@ print<<EOP;
 <!---------nav menu----------!>
 
 <body>
-    <script src="http://widit.knu.ac.kr/~adit/proj/player/Drums_Piano.js"></script>
-    <script src="http://widit.knu.ac.kr/~adit/proj/player/PlayFunctions.js"></script>
 	<div class="header"><h1>Top Charts</h1></div>
     <table>
     <tr class="title">
@@ -119,6 +133,8 @@ $i++;
 
 print<<EOP;
 	</table>
+    <script src="http://widit.knu.ac.kr/~adit/proj/player/Drums_Piano.js"></script>
+    <script src="http://widit.knu.ac.kr/~adit/proj/player/PlayFunctions.js"></script>
 </body>
 
 </html>

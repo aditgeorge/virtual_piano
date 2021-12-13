@@ -66,7 +66,7 @@ foreach $line(@lines)
 }
 #----------------------------------------------------------------------
 
-#if userid exists
+#if userid doesn't exists
 if(!exists($uinfo{$uname})) {
     print header();
     $headerphp=system '/usr/bin/php', '../landing_page/nav_land.php';
@@ -83,7 +83,7 @@ if(!exists($uinfo{$uname})) {
     <h2 class="type"><font color='purple'>$uname</font> doesn't exist</h2>
     <h3 class="obs">Please try again with a different username or Create a new account</h3>
     <br><br>
-    <a href="login.html">Login Again</a>&nbsp&nbsp<a href="signup.html">Sign Up</a></p>
+    <p style="font-size:20px"><a href="login.html">Login Again</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="signup.html">Sign Up</a></p>
     </body>
     </html>
 EOP

@@ -12,7 +12,8 @@ $pw2=param("pw2");
 $file="../resources/files/user_info.out";
 # Delimiter character for text field storage
 $delim="!---!";
-
+$songborder="*-!-*";
+$songinner="|&&|";
 
 # Checking if any parameters are empty, and storing error message in array @emptyparams
 @emptyparams=();
@@ -45,9 +46,9 @@ if((scalar @emptyparams)>0)
     <body>
     <h1 class="oops">Bad Input</h1>
     <h2 class="type">No field must be <font color='red'>empty</font></h2>
-    <h3 class="obs">The following fields are empty<font color="purple">$checklist</font></h3>
-    <br><br>
-    Please <a href="signup.html">go back and try again</a></p>
+    <h3 class="obs">The following fields are empty<font color="purple">$checklist</font>
+    <br>
+    Please <a href="signup.html">go back and try again</a></h3>
     </body>
     </html>
 EOP
@@ -57,20 +58,20 @@ exit;
 # Checking if any fields contain the delimiter character sequence
 # the delimiter is used to seperate fields in the hw9-1.out file. If the field themselves contain it, it would cause problems when reading.
 @paramconflicts=();
-if($userid =~ /\Q$delim\E/)
+if(($uname =~ /\Q$delim\E/)||($uname =~ /\Q$songborder\E/)||($uname =~ /\Q$songinner\E/))
 {
     push(@paramconflicts,"User ID");
 }
-if($pw=~ /\Q$delim\E/)
+if(($pw =~ /\Q$delim\E/)||($pw =~ /\Q$songborder\E/)||($pw =~ /\Q$songinner\E/))
 {
     push(@paramconflicts,"Password");
 }
-if($pw2=~ /\Q$delim\E/)
+if(($pw2 =~ /\Q$delim\E/)||($pw2 =~ /\Q$songborder\E/)||($pw2 =~ /\Q$songinner\E/))
 {
     push(@paramconflicts,"Password Confirmation");
 }
 
-$checklist=join("<br>",@paramconflicts);
+$checklist=join(", ",@paramconflicts);
 if((scalar @paramconflicts)>0)
 {
     print header();
@@ -85,11 +86,15 @@ if((scalar @paramconflicts)>0)
     </head>
     <body>
     <h1 class="oops">Bad Input</h1>
-    <h2 class="type">No field must contain <font color='red'>$delim</font> characters</h2>
+    <h2 class="type">No field must contain the following character sequences:
+    <font color='red'>
+    <br>$delim
+    <br>$songborder
+    <br>$songinner
+    </font></h2>
     <h3 class="obs">The following fields contain the illegal character sequence, <font color="purple">$checklist</font></h3>
-    <br><br>
-    The character sequence, $delim, is reserved for internal server operations.<br><br>
-    Please <a href="signup.html">go back and try again</a></p>
+    <h3 class="obs">These character sequences are reserved for internal server operations.
+    Please <a href="signup.html">go back and try again</a></h3>
     </body>
     </html>
 EOP
@@ -154,7 +159,7 @@ exit;
 }
 else {
     open(OUTF,">>","$file") || die "can't append to $file";
-    print OUTF $uname.$delim.$pw."\n";
+    print OUTF $uname.$delim.$pw.$delim."avatar1.jpg"."\n";
     close(OUTF);
     $cookie= cookie(
     -name => "VP-cookie",

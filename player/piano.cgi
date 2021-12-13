@@ -9,11 +9,13 @@ $sfile="../resources/files/user_profile.out";
 $cfile="../resources/files/counter.out";
 $delim="!---!";
 $songborder="*-!-*";
-$songinner="&&";
+$songinner="|&&|";
 $songname=param("songname");
 $songseq=param("songseq");
 $uname= cookie('VP-cookie');
 chomp $uname;
+chomp $songname;
+chomp $songseq;
 # user info for verification
 open(IN,"<$ufile") || die "can't open $ufile for reading\n";
 @lines=<IN>;
@@ -22,8 +24,12 @@ close(IN);
 %uinfo=();
 foreach $line(@lines) {
     chomp $line;
+    if($line eq "") {
+        next;
+    }
     @temp=split(/\Q$delim\E/,$line);
-    $uinfo{$temp[0]}=$temp[1];
+    $uinfo{$temp[0]}{"pw"}=$temp[1];
+    $uinfo{$temp[0]}{"avatar"}=$temp[2];
 }
 #----------------------------------------
 #song file load
@@ -73,9 +79,8 @@ print header();
     <body>
     <h1 class="oops">>Cookie Timed Out</h1>
     <h2 class="type">Unfortunately the cookie couldn't be read to verify user credentials.<br></h2>
-    <h3 class="obs">Please log in again</h3>
+    <h3 class="obs"><a href="../user_auth/login.html">Please click here to log in again</a></h3>
     <br><br>
-    Please <a href="../user_auth/login.html">Log In</a></p>
     </body>
     </html>
 EOP
@@ -101,7 +106,6 @@ if(($songname ne "")&&($songseq ne "")){
     open(OUTF,">$sfile") || die "Can't open $sfile for writing\n";
 	foreach $key(keys %usongs) {
 		print OUTF $key.$delim.$usongs{$key}."\n";
-		$counter++;
 	}
 	close(OUTF);
     $songid++;
@@ -118,10 +122,8 @@ print<<EOP;
     <meta charset="utf-8">
     <title>Virtual Piano</title>
     <link rel="stylesheet" href="piano_style.css">
-
 </head>
 <body>
-
 
     <div class="band">
 
@@ -135,7 +137,7 @@ print<<EOP;
 	    <label for="tune" class="label"><b>Tune Name:</b></label>
 	    <input id="songnamein" type="text" placeholder="Name" name="songname" required>
 	    <label for="tune" class="label"><b>Tunes:</b></label>
-	    <input id="output" name="songseq" placeholder="Music Notes" type="text" readonly value="">
+	    <input id="output" name="songseq" placeholder="Music Notes (click on keyboard to start)" type="text" readonly value="">
         <input type="button" value="Play" id="play">
         <input type="reset" value="Clear" id="clr">
         <input type="submit" value="Submit" id="save">
