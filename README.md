@@ -3,5 +3,5 @@ It's a simple website which allows users to create music by pressing keys on the
 The user can listen to, save and delete their music.
 All the music is public and is ranked based on likes.
 
-Live Site
+Live Site:
 http://widit.knu.ac.kr/~adit/proj/landing_page/home_land.html
